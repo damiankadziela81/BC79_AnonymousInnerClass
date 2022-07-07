@@ -15,24 +15,9 @@ public class MyFrame extends JFrame {
         button2.setBounds(200,100,100,100);
         button3.setBounds(300,100,100,100);
 
-        button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("You pressed button #1");
-            }
-        });
-        button2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("You pressed button #2");
-            }
-        });
-        button3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("You pressed button #3");
-            }
-        });
+        button1.addActionListener(e -> System.out.println("You pressed button #1"));
+        button2.addActionListener(e -> System.out.println("You pressed button #2"));
+        button3.addActionListener(e -> System.out.println("You pressed button #3"));
 
         this.add(button1);
         this.add(button2);
