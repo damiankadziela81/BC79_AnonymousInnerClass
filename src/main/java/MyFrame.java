@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MyFrame extends JFrame implements  ActionListener{
+public class MyFrame extends JFrame {
 
     JButton button1 = new JButton("Button #1");
     JButton button2 = new JButton("Button #2");
@@ -15,9 +15,25 @@ public class MyFrame extends JFrame implements  ActionListener{
         button2.setBounds(200,100,100,100);
         button3.setBounds(300,100,100,100);
 
-        button1.addActionListener(this);
-        button2.addActionListener(this);
-        button3.addActionListener(this);
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("You pressed button #1");
+            }
+        });
+        button2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("You pressed button #2");
+            }
+        });
+        button3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("You pressed button #3");
+            }
+        });
+
         this.add(button1);
         this.add(button2);
         this.add(button3);
@@ -25,21 +41,5 @@ public class MyFrame extends JFrame implements  ActionListener{
         this.setSize(500,500);
         this.setLayout(null);
         this.setVisible(true);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==button1){
-            System.out.println("You pressed button #1");
-        }
-        if(e.getSource()==button2){
-            System.out.println("You pressed button #2");
-        }
-        if(e.getSource()==button3){
-            System.out.println("You pressed button #3");
-        }
-
-
-
     }
 }
